@@ -4,7 +4,8 @@
 
 // A global variable, for accesing the currently active animation interval.
 // We need this to cancel the animation later.
-let intervalId = 0;
+/* let intervalId = 0; */
+var intervalId = 0;
 
 /**
  * The HTML DOM node for the scroll to top link.
@@ -12,8 +13,8 @@ let intervalId = 0;
  * The variable representing our scroll link element is declared as a constant, so it 
  * can't be overwritten.
  **/
-const $scrollLink = document.querySelector('.scroll');
-
+/* const $scrollLink = document.querySelector('.scroll'); */
+var $scrollLink = document.querySelector('.scroll');
 
 // Let's start building our functions:
 
@@ -34,7 +35,8 @@ function initScrollToTop() {
      * Add a click event listener to the scroll link element. 
      * It will trigger the scrollToTop() function when the link is clicked.
      **/
-    $scrollLink.addEventListener('click', (evt) => {
+/*     $scrollLink.addEventListener('click', (evt) => { */
+    $scrollLink.addEventListener('click', function (evt) {
         // We have to prevent the link's default behaviour to
         // stop the page jumping to the top right away when it is clicked.
         evt.preventDefault();
@@ -45,7 +47,8 @@ function initScrollToTop() {
 // Function for scrolling up one step
 function scrollStep() {
     // This constant defines how many pixels we are going to scroll up in one step.
-    const scrollHeight = 50;
+//     const scrollHeight = 50;
+    var scrollHeight = 50;
     
     // Check whether the window has scrolled to the top
     if (window.scrollY === 0) {
@@ -67,7 +70,8 @@ function scrollToTop() {
      *  For best web performance, we dont need more than 60 FPS = Frames per second (16.66ms).
      *  Read more: https://developers.google.com/web/fundamentals/performance/rendering/?hl=en
     */
-    const intervalDuration = 16.66666;
+/*     const intervalDuration = 16.66666; */
+    var intervalDuration = 16.66666;
 
     /**
      * setInterval(functionName, interval) calls a specified function 

@@ -3,11 +3,16 @@
 // Let's define our variables first:
 
 // A global variable, for accesing the interval
-let countdown;
+/* let countdown; */
+var countdown;
 
 // The two HTML DOM nodes for the countdown text and the countdown time
+/*
 const $countdownText = document.querySelector('.countdown__text');
 const $countdownTime = document.querySelector('.countdown__time');
+*/
+var $countdownText = document.querySelector('.countdown__text');
+var $countdownTime = document.querySelector('.countdown__time');
 
 // Let's start building our functions:
 
@@ -24,9 +29,14 @@ function initializeCountdown() {
  * for creating the text strings for the HTML.
  */
 function renderCountdown() {
+/*
   const currentDate = new Date();
   const nextEventDate = new Date('June 01 2016 19:00:00 GMT+0100 (CEST)');
   const dateDifference = new Date(nextEventDate - currentDate);
+*/
+  var currentDate = new Date();
+  var nextEventDate = new Date('June 01 2016 19:00:00 GMT+0100 (CEST)');
+  var dateDifference = new Date(nextEventDate - currentDate);
 
   getCountdownTimeString(dateDifference);
 }
@@ -38,13 +48,21 @@ function renderCountdown() {
  *    and the date of the upcoming event
  */
 function getCountdownTimeString(date) {
+/*
   let days = date.getDate();
   let hours = date.getHours();
   let minutes = date.getMinutes();
   let seconds = date.getSeconds();
 
   let countdownText, countdownTime;
+*/
+  var days = date.getDate();
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
 
+  var countdownText, countdownTime;
+  
   if (date.getTime() >= 0) {
     days = days < 2 ? `${days} day, ` : `${days} days, `;
     hours = hours < 2 ? `${hours} hour and ` : `${hours} hrs, `;
