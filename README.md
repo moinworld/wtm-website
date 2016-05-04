@@ -6,8 +6,6 @@ Last update: May 1, 2016.
 
 ##Questions?
 
-Reach out to the front end devs working on this template.
-
 ilithya --> https://github.com/ilithya
 
 Steffi --> https://github.com/stefaniestoppel
