@@ -21,11 +21,3 @@ We're using a small responsive framework to build this template.
 http://www.responsivegridsystem.com/
 
 Author --> Graham Miller --> http://grahamrobertsonmiller.co.uk/ 
-
-##Hamburg Photos
-
-Photos from the city of Hamburg by WTM lead and member.
-
-WTM Lead --> Anja Schumann
-
-WTM Member --> Simla K&uuml;&ccedil;&uuml;ksayan
