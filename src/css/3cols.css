@@ -1,0 +1,36 @@
+/*! Responsive Grid System | Author: Graham Miller - grahamrobertsonmiller.co.uk | responsivegridsystem.com/layouts */
+
+/*  =============================================================================
+    GRID OF THREE 
+    ============================================================================= */
+	
+.span_3_of_3 {
+	width: 100%; 
+}
+
+.span_2_of_3 {
+	width: 66.13%; 
+}
+
+.span_1_of_3 {
+	width: 32.26%; 
+}
+
+
+
+/*  =============================================================================
+    MEDIA QUERIES - BREAKPOINTS:
+    Remove margins as all go full width at 768 pixels
+    ============================================================================= */
+    
+@media only screen and (max-width: 768px) {
+	.span_3_of_3 {
+		width: 100%; 
+	}
+	.span_2_of_3 {
+		width: 100%; 
+	}
+	.span_1_of_3 {
+		width: 100%;
+	}
+}
