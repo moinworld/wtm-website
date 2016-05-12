@@ -18,14 +18,12 @@
 
 .group:before,
 .group:after {
-    content:"";
-    display:table;
+    content: "";
+    display: table;
 }
+
 .group:after {
-    clear:both;
-}
-.group {
-    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+    clear: both;
 }
 
 
@@ -36,11 +34,13 @@
 
 .col {
 	display: block;
-	float:left;
+	float: left;
 	margin: 1% 0 1% 1.6%;
 }
 
-.col:first-child { margin-left: 0; } /* all browsers except IE6 and lower */
+.col:first-child { 
+    margin-left: 0; 
+} /* all browsers except IE6 and lower */
 
 
 
