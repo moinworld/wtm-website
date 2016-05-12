@@ -1,14 +1,17 @@
 # Women Techmakers Hamburg Website 
 
-Last update: May 4, 2016.
+Last update: May 12, 2016.
 
 ##Questions?
 
-ilithya --> https://github.com/ilithya
+**ilithya**:
+https://github.com/ilithya
 
-Steffi --> https://github.com/stefaniestoppel
+**Steffi**:
+https://github.com/stefaniestoppel
 
-Philipp --> https://github.com/TheAmazingPT
+**Philipp**:
+https://github.com/TheAmazingPT
 
 ##Framework
 
@@ -18,4 +21,4 @@ We're using a small responsive framework to build this template.
 
 http://www.responsivegridsystem.com/
 
-Author --> Graham Miller --> http://grahamrobertsonmiller.co.uk/ 
+**Author** Graham Miller: http://grahamrobertsonmiller.co.uk/ 
