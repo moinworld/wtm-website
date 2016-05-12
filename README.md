@@ -1,6 +1,6 @@
 # Women Techmakers HH Site Template
 
-WTM HH Development Branch.
+WTM HH Develop Branch.
 
 Last update: May 12, 2016.
 
