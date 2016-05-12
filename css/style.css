@@ -62,6 +62,7 @@ a {
     color: #666;  /* Gray */
     outline: 0;
     text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Remove dark background tap on iPad/iPhone */
     -webkit-transition: color 0.1s linear, border 0.2s linear; /* Chrome, Safari, Opera */
     transition: color 0.1s linear, border 0.2s linear;
 }
