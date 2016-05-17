@@ -113,6 +113,10 @@ button {
     font-style: normal;
 }
 
+p:not(:last-child) {
+    margin-bottom: 30px;
+}
+
 /*  MEDIA QUERIES - BREAKPOINT: Device has a minimal width of 769 pixels */
 
 @media only screen and (min-width: 769px) {
@@ -599,4 +603,9 @@ button {
     margin-top: 60px;
     padding: 12px 0;
     text-align: center;
+}
+
+.footer a.active {
+     color: #4285F4; /* Dark Blue */
+     border-bottom: 0;
 }
