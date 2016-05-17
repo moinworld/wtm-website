@@ -91,6 +91,9 @@ button {
 .h1, .h2, .h3, .h4, .cite {
     color: #666; /* Gray */
     font-weight: 100;
+}
+
+.h1, .h2, .h3, .cite {
     line-height: 1.1;
 }
 
@@ -106,6 +109,7 @@ button {
 
 .h4 {
     font-size: 20px;
+    line-height: 1.5;
     margin-bottom: 20px;
 }
 
