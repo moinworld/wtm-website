@@ -298,6 +298,13 @@ p:not(:last-child) {
     color: #000;  /* Black */
 }
 
+/* social Navigation */
+
+.social-nav {
+    vertical-align: middle;
+    float: right;
+}
+
 /* MOBILE NAVIGATION BUTTON */
 
 .menu--open {
@@ -374,7 +381,13 @@ p:not(:last-child) {
     .nav a.active {
         color: #4285F4; /* Dark Blue */
     }
-
+    
+    .social-nav {
+    vertical-align: middle;
+    float:left;
+    padding-left: 20px;
+    }
+    
     /* CSS Magic - Let's Open that Mobile Navigation */
     .nav:target {
         left: 0;
