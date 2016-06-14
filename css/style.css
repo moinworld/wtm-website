@@ -121,9 +121,9 @@ p:not(:last-child) {
     margin-bottom: 30px;
 }
 
-/*  MEDIA QUERIES - BREAKPOINT: Device has a minimal width of 769 pixels */
+/*  MEDIA QUERIES - BREAKPOINT: Device has a minimal width of 870 pixels */
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 870px) {
     .h2 {
         font-size: 54px;
     }
@@ -160,9 +160,9 @@ p:not(:last-child) {
 }
 
 
-/*  MEDIA QUERIES - BREAKPOINT: Device has a minimal width of 769 pixels */
+/*  MEDIA QUERIES - BREAKPOINT: Device has a minimal width of 870 pixels */
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 870px) {
     .visible-mobile {
         display: none !important;
     }
@@ -222,9 +222,9 @@ p:not(:last-child) {
     margin-top: 20px;
 }
 
-/*  MEDIA QUERIES - BREAKPOINT: Device has a minimal width of 769 pixels */
+/*  MEDIA QUERIES - BREAKPOINT: Device has a minimal width of 870 pixels */
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 870px) {
     .sec--content .wrapper {
         padding: 0 35px;
     }
@@ -284,6 +284,7 @@ p:not(:last-child) {
 /* NAVIGATION */
 
 .nav ul {
+    display: inline-block;
     list-style-type: none;
     padding-top: 16px;
 }
@@ -298,10 +299,9 @@ p:not(:last-child) {
     color: #000;  /* Black */
 }
 
-/* social Navigation */
+/* SOCIAL NAVIGATION */
 
-.social-nav {
-    vertical-align: middle;
+.nav__social {
     float: right;
 }
 
@@ -343,9 +343,9 @@ p:not(:last-child) {
     text-transform: uppercase;
 }
 
-/*  MEDIA QUERIES - BREAKPOINT: Device has a maximal width of 768 pixels */
+/*  MEDIA QUERIES - BREAKPOINT: Device has a maximal width of 869 pixels */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 869px) {
 
     /* NAVIGATION */
 
@@ -365,10 +365,13 @@ p:not(:last-child) {
     .nav ul {
         width: 95%;
         line-height: 20px;
+    }
+
+    .nav ul:first-of-type {
         margin: 70px 0 0 13px;
     }
 
-    .nav ul li {
+    .nav .nav__site li {
         display: block;
     }
 
@@ -381,14 +384,9 @@ p:not(:last-child) {
     .nav a.active {
         color: #4285F4; /* Dark Blue */
     }
-    
-    .social-nav {
-    vertical-align: middle;
-    float:left;
-    padding-left: 20px;
-    }
-    
+
     /* CSS Magic - Let's Open that Mobile Navigation */
+
     .nav:target {
         left: 0;
     }
@@ -454,9 +452,9 @@ p:not(:last-child) {
     display: inline-block;
 }
 
-/*  MEDIA QUERIES - BREAKPOINT: Device has a minimal width of 769 pixels */
+/*  MEDIA QUERIES - BREAKPOINT: Device has a minimal width of 870 pixels */
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 870px) {
     .sec--home__logo {
         padding-right: 8px;
     }
@@ -466,9 +464,9 @@ p:not(:last-child) {
     }
 }
 
-/*  MEDIA QUERIES - BREAKPOINT: Device has a maximal width of 768 pixels */
+/*  MEDIA QUERIES - BREAKPOINT: Device has a maximal width of 869 pixels */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 869px) {
     .countdown {
         margin-top: 30px;
     }
@@ -536,9 +534,9 @@ p:not(:last-child) {
     background-color: rgba(66, 133, 244, 0.05); /* Dark Blue with 5% alpha opacity */
 }
 
-/*  MEDIA QUERIES - BREAKPOINT: Device has a maximal width of 768 pixels */
+/*  MEDIA QUERIES - BREAKPOINT: Device has a maximal width of 869 pixels */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 869px) {
     .sec--community .figure {
         text-align: center;
     }
@@ -561,9 +559,9 @@ p:not(:last-child) {
     padding-bottom: 60px;
 }
 
-/*  MEDIA QUERIES - BREAKPOINT: Device has a maximal width of 768 pixels */
+/*  MEDIA QUERIES - BREAKPOINT: Device has a maximal width of 869 pixels */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 869px) {
     .sec--mentors .col {
         padding-top: 0;
     }
