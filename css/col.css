@@ -1,7 +1,7 @@
 /*! Responsive Grid System | Author: Graham Miller - grahamrobertsonmiller.co.uk | responsivegridsystem.com/layouts */
 
 /*  =============================================================================
-    SECTIONS  
+    SECTIONS
     ============================================================================= */
 
 .section {
@@ -13,7 +13,7 @@
 
 
 /*  =============================================================================
-    GROUPING  
+    GROUPING
     ============================================================================= */
 
 .group:before,
@@ -29,7 +29,7 @@
 
 
 /*  =============================================================================
-    GRID COLUMN SETUP 
+    GRID COLUMN SETUP
     ============================================================================= */
 
 .col {
@@ -38,19 +38,19 @@
 	margin: 1% 0 1% 1.6%;
 }
 
-.col:first-child { 
-    margin-left: 0; 
+.col:first-child {
+    margin-left: 0;
 }
 
 
 
 /*  =============================================================================
     MEDIA QUERIES - BREAKPOINTS:
-    Remove margins as all go full width at 768 pixels
+    Remove margins as all go full width at 869 pixels
     ============================================================================= */
 
-@media only screen and (max-width: 768px) {
-	.col { 
+@media only screen and (max-width: 869px) {
+	.col {
 		margin: 1% 0 1% 0%;
 	}
 }
@@ -58,7 +58,7 @@
 
 
 /*  =============================================================================
-    GRID OF TWO 
+    GRID OF TWO
     ============================================================================= */
 
 .span_2_of_2 {
@@ -73,49 +73,49 @@
 
 /*  =============================================================================
     MEDIA QUERIES - BREAKPOINTS:
-    Remove margins as all go full width at 768 pixels
+    Remove margins as all go full width at 869 pixels
     ============================================================================= */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 869px) {
 	.span_2_of_2 {
-		width: 100%; 
+		width: 100%;
 	}
 	.span_1_of_2 {
-		width: 100%; 
+		width: 100%;
 	}
 }
 
 
 
 /*  =============================================================================
-    GRID OF THREE 
+    GRID OF THREE
     ============================================================================= */
-	
+
 .span_3_of_3 {
-	width: 100%; 
+	width: 100%;
 }
 
 .span_2_of_3 {
-	width: 66.13%; 
+	width: 66.13%;
 }
 
 .span_1_of_3 {
-	width: 32.26%; 
+	width: 32.26%;
 }
 
 
 
 /*  =============================================================================
     MEDIA QUERIES - BREAKPOINTS:
-    Remove margins as all go full width at 768 pixels
+    Remove margins as all go full width at 869 pixels
     ============================================================================= */
-    
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 869px) {
 	.span_3_of_3 {
-		width: 100%; 
+		width: 100%;
 	}
 	.span_2_of_3 {
-		width: 100%; 
+		width: 100%;
 	}
 	.span_1_of_3 {
 		width: 100%;
