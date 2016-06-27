@@ -1,7 +1,4 @@
-# Women Techmakers HH Site Template
-
-WTM HH Develop Branch.
-
+# Women Techmakers Hamburg Website 
 Last update: June 16, 2016.
 
 ##Questions?
