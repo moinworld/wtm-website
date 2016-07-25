@@ -1,5 +1,5 @@
 # Women Techmakers Hamburg Website 
-Last update: June 16, 2016.
+Last update: June 25, 2016.
 
 ##Questions?
 
