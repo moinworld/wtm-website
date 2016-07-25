@@ -3,7 +3,7 @@
 /* WTM HH Color Palette: Hex Values - RGB Values:
 White: #fff - rgb(255, 255, 255);
 Gray: #666 - rgb(102, 102, 102);
-Black: #000 - rgb(0, 0, 0);
+Black: #10162D; - rgb(16, 22, 45);
 Green: #1CE9B6 - rgb(28, 233, 182);
 Dark Green: #00BFA5 - rgb(0, 191, 165);
 Blue: #4FC3F7 - rgb(79, 195, 247);
@@ -15,7 +15,7 @@ Dark Blue: #4285F4 - rgb(66, 133, 244);
     BASE STYLES
     ============================================================================= */
 
-/* BASE STYLES are a set of CSS rules that will be applied into desired global HTML elements via CSS selectors (element type selectors/HTML elements or class selectors). */
+/* BASE STYLES are a set of CSS rules that will be applied into desired global HTML elements via CSS selecrgb(16, 22, 45)tors (element type selectors/HTML elements or class selectors). */
 
 * {
     box-sizing: border-box;
@@ -31,7 +31,7 @@ body {
 
 body {
     background: #fff; /* White */
-    color: #000;  /* Black */
+    color: #10162D;;  /* Black */
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 300;
@@ -296,7 +296,7 @@ p:not(:last-child) {
 }
 
 .nav a.active {
-    color: #000;  /* Black */
+    color: #10162D;;  /* Black */
 }
 
 /* SOCIAL NAVIGATION */
@@ -452,6 +452,30 @@ p:not(:last-child) {
     display: inline-block;
 }
 
+.btn_call_to_action {
+    width: 170px;
+    height: 50px;
+    background-color: #f1524c;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+.btn_call_to_action > .btn_link {
+    width: 100%;
+    margin: auto;
+    padding: 6px;
+}
+
+.btn_call_to_action a {
+    border-bottom: #f1524c;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+
 /*  MEDIA QUERIES - BREAKPOINT: Device has a minimal width of 870 pixels */
 
 @media only screen and (min-width: 870px) {
@@ -518,7 +542,7 @@ p:not(:last-child) {
 
 .sec--community ul li:nth-child(odd),
 .sec--community ul li:nth-child(even) {
-    color: #000;  /* Black */
+    color: #10162D;;  /* Black */
 }
 
 .sec--community li:not(:first-of-type) {
