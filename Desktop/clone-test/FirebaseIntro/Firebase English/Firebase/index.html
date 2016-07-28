@@ -1,0 +1,209 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+    <meta data-page-description="" name="description" content="Women Techmakers is your community as a women in tech in Hamburg. Join one of our Meetups and see.">
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Women Techmakers Hamburg Community | Welcome</title>
+<link rel="stylesheet" href="css/style.css">
+    <script src="https://use.fontawesome.com/webfontloader/1.6.24/webfontloader.js"></script>
+<!--  =============================================================================
+    Add Firebase here start
+    ============================================================================= */-->
+    
+    <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCwPu6qyGNSf31j4ttoXE3CNuPwMuk8iJg",
+    authDomain: "fir-test-1c6f6.firebaseapp.com",
+    databaseURL: "https://fir-test-1c6f6.firebaseio.com",
+    storageBucket: "fir-test-1c6f6.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
+    
+  <!--  =============================================================================
+    Add Firebase here end
+    ============================================================================= */-->      
+
+ <!--  =============================================================================
+    Add Java Script here start
+    ============================================================================= */-->
+      <script type="text/javascript">
+                              
+          //Read https://firebase.google.com/docs/auth/web/google-signin
+            
+            //creates an instance of the Google provider object:
+            
+                var provider = new firebase.auth.GoogleAuthProvider();
+
+                function googleSignin() {
+                                    
+                 //to sign in with a pop up window, call signInWithPopup:
+                
+                    firebase.auth() .signInWithPopup(provider).then(function(result) {
+                       //this gives you an access token you can use it to access the Google API
+                      var token = result.credential.accessToken;
+                   
+                        //The signed in user Info
+                        var user = result.user;
+
+                          console.log(token);
+                          console.log(user);
+                          console.log("Sign In Successful!");
+                                                  
+                          document.getElementById("signin").style.display="none";
+                          document.getElementById("signout").style.display="block"; 
+                        
+                        //Make the profile photo
+                        var profilePicUrl = user.photoURL;
+                        
+                        document.getElementById("user-pic").setAttribute("src", profilePicUrl);
+                          
+               }).catch(function(error) {
+                  var errorCode = error.code;
+                  var errorMessage = error.message;
+                   var email=error.email;
+
+                  console.log(error.code);
+                  console.log(error.message);
+               });
+                    
+            }
+          
+            //to sign in with a pop up window, call firebase.auth().signInWithRedirect(provider) USE FOR MOBILE!!
+                  
+          
+          // Also add handling account exists with different credentials Errors => see how at https://firebase.google.com/docs/auth/web/google-signin
+
+            function googleSignout() {
+               firebase.auth().signOut() .then(function() {
+                  console.log('Signout Succesfull');
+                  
+                  document.getElementById("signin").style.display="block";   
+                  document.getElementById("signout").style.display="none";   
+                   
+               }, function(error) {
+                  console.log('Signout Failed');  
+               });
+            }
+
+          //Manage USers: see documentation: https://firebase.google.com/docs/auth/web/manage-users as an option
+        
+          
+   </script>
+    
+     <!--  =============================================================================
+    Add Java Script here end
+    ============================================================================= */-->
+    
+    
+</head>
+<body>
+ 
+<div class="top-bar">
+    <div class="top-bar-left">
+        <ul class="menu">
+            <li class="menu-text">Blog</li>
+            <li><a href="https://twitter.com/wtm_hamburg/" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+
+             <!--  =============================================================================
+            Add Buttons here start
+            ============================================================================= */-->
+
+            <li><button class="menu-text" id="signin" onclick = "googleSignin()">Google SignIn</button></li>
+            <li><button  class="menu-text" id="signout" onclick = "googleSignout()">Google SignOut</button></li>
+            <li><div id="user-pics"></div></li>
+            <li><img id="user-pic" src="/img/profile_placeholder.png"></li>
+           
+        
+
+         <!--  =============================================================================
+            Add Buttons here end
+            ============================================================================= */-->
+
+        </ul>
+    </div>
+</div>
+    
+    
+    <div class="callout large primary">
+    <div class="row column text-center">
+        <h1>Dein Women Techmakers Hamburg Blog</h1>
+        <h2 class="subheader">Stories of a Software Developer</h2>
+    </div>
+</div>
+ 
+<div class="row medium-8 large-7 columns">
+<div class="blog-post">
+    <h3>Today I learned about Firebase  <small>27/7/2016</small></h3>
+        <a href="www.moinworld.de"><img class="thumbnail" src="img/X4AAF4SU9Q.jpg"></a>
+    <p>Firebase is Google’s Product that makes App development easier. It provides a set of features that helps you develop, grow your audience and monetize your App. You do not need to worry about setting up an authentication mechanism to identify your users for example and it comes with a realtime database and an easy to access storage for more complex files. The hosting solution is free and very easy to set up.   </p>
+        <div class="callout">
+            <ul class="menu simple">
+            <li><a href="www.moinworld.de">Autorin: Anja Schumann, Women Techmakers Hamburg</a></li>
+
+            </ul>
+        </div>
+</div>
+<div class="blog-post">
+    <h3>what I learned about my unconscious bias <small>3/6/2016</small></h3>
+    <img class="thumbnail" src="img/G9CLJC5580%20(1).jpg">
+    <p>Nowadays if you want to start a job with one of the popular companies like McKinsey, Google or Facebook you are being exposed to your unconscious biases via tests like this one: the https://implicit.harvard.edu/implicit/takeatest.html. The goal is to educate about hidden biases that we all have and that prevent us from make the right decisions, especially when it comes to peoples decisions.
+    </p>
+    <div class="callout">
+        <ul class="menu simple">
+        <li><a href="www.moinworld.de">Autorin: Myself</a></li>
+
+        </ul>
+    </div>
+</div>
+    
+<div class="blog-post">
+    <h3>How does a woman in Tech look like? <small>27/7/2016</small></h3>
+    <img class="thumbnail" src="img/TII3G5LI3D.jpg">
+    <p>One of the many reason why there are so few women in the tech space is the lack of role models. Why don’t you become one? Sharing what your everyday life is like helps younger generations really understand what it means to work in tech.
+
+    What does a woman in tech create? What is it like for women working in tech now? How does a woman in tech look like? What does she accomplish?
+    Share the reality if your life with upcoming techies. You could send us an article for us to put into our blog, make a video, create a program. 
+
+    Motivate and encourage a new age of women in tech. Contact us at womentechmakershamburg@gmail.com.
+
+        </p>
+    <div class="callout">
+        <ul class="menu simple">
+        <li><a href="www.moinworld.de">Autorin: Anja Schumann, Women Techmakers Hamburg</a></li>
+
+        </ul>
+    </div>
+</div>
+    
+<div class="blog-post">
+    <h3>why we need more women in tech and why I support Women Techmakers Hamburg <small>27/7/2016</small></h3>
+    <img class="thumbnail" src="img/BL1SOOUWHX.jpg">
+    <p>When we watch the numbers, there has been a decline in the number of women entering STEM fields since the 1980s. In earlier times almost 40 percent of computer science graduates were women. Today the number is less than 18 percent. <br>
+
+    We believe that there are several factors that have led to such a situation. <br>
+
+    Media and education: Look at magazines targeted to women and girls, social media or movies as an example. Girls get messages all the time that technology is not for them. On the other hand boys get the message that it is necessary for a guy to be technically skilled. <br>
+
+    A lack of role models and knowledge. A lot of people do not fully understand what is means to be a computer scientist and what people in those roles do all day. <br>
+
+    This is what we want to change with our initiative Women Techmakers Hamburg. We want to provide opportunities to talk, experiment and network with people already in the field.<br>
+    </p>
+    <div class="callout">
+        <ul class="menu simple">
+        <li><a href="#">Autorin: Anja Schumann, Women Techmakers Hamburg</a></li>
+
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>
+    
+    
+ 
