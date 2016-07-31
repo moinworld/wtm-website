@@ -648,3 +648,50 @@ p:not(:last-child) {
      color: #4285F4; /* Dark Blue */
      border-bottom: 0;
 }
+
+
+/*  =============================================================================
+    OVERLAY
+    ============================================================================= */
+.overlay-wrapper {
+    display: none;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+
+.overlay {
+    background: none rgba(102, 102, 102, 0.3);
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/*  =============================================================================
+    COOKIE INFO STYLES
+    ============================================================================= */
+.cookie-info {
+    background: none #666;
+    color: #fff;
+    display: none;
+    padding: 2em;
+}
+
+.cookie-info__link,
+.cookie-info__link:hover,
+.cookie-info__link:active,
+.cookie-info__link:focus,
+.cookie-info__link:visited {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+.cookie-info__button {
+    background: none;
+    border: 1px solid #fff;
+    padding: .5em;
+    color: #fff;
+}

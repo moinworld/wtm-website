@@ -32,9 +32,21 @@
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KN53WC');</script>
     <!-- End Google Tag Manager -->
 
+    <!-- Overlay Wrapper -->
+    <div id="overlayWrapper" class="overlay-wrapper">
+        <div id="cookieInfo" class="cookie-info">
+            <p>
+                Durch die Nutzung von moinworld.de stimmen Sie unserer Verwendung von Cookies zu. Nähere Informationen
+                über die von uns verwendeten Cookies und die Möglichkeiten, diese zu deaktivieren, finden Sie
+                <a href="imprint.html#googleAnalytics" class="cookie-info__link">hier</a>.
+            </p>
+            <button id="cookieInfoBtn" class="cookie-info__button" type="button">Einverstanden</button>
+        </div>
+        <div class="overlay"></div>
+    </div>
+
     <header class="header">
     	<div class="wrapper">
-
             <!-- Logo -->
             <h1 class="logo"><a href="/">Women Techmakers Hamburg</a></h1>
 
@@ -119,6 +131,11 @@
 
     <!-- Include our functions JS file -->
     <script src="js/event-countdown.js"></script>
+
+    <!-- Cookie info / notification -- JS file -->
+    <script src="js/cookie.js"></script>
+
+
 </body>
 
 </html>
