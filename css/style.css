@@ -325,6 +325,7 @@ p:not(:last-child) {
     float: right;
     margin-top: 20px;
     margin-right: 15px;
+    font-weight: 600;
 }
 
 .menu--open:hover,
