@@ -325,6 +325,7 @@ p:not(:last-child) {
     float: right;
     margin-top: 20px;
     margin-right: 15px;
+    font-weight: 600;
 }
 
 .menu--open:hover,
@@ -605,18 +606,18 @@ p:not(:last-child) {
 /* STICKY BACK-TO-TOP BUTTON STYLES are a set of CSS rules that will be applied to our scroll to top button link via CSS selectors (class selectors) already defined in our HTML element and defined via JS (JavaScript) that needs styling to match our template. */
 
 .scroll {
-    background-color: #1CE9B6; /* Green */
-    border: 0;
-    color: white;
-    font-size: 30px;
-    opacity: 0;
-    padding: 0 30px;
     position: fixed;
     bottom: 10px;
     right: 10px;
-    -webkit-transform: rotate(180deg);  /* Chrome, Opera 15+, Safari 3.1+ */
-    -ms-transform: rotate(180deg);  /* IE 9 */
-    transform: rotate(180deg);
+    color: white;
+    background-color: #1CE9B6; /* Green */
+    border: 0;
+    opacity: 0;
+}
+
+.scroll__icon {
+  width: 48px;
+  height: 48px;
 }
 
 .is-visible {
