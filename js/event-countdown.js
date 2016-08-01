@@ -35,8 +35,8 @@ function renderCountdown() {
   const dateDifference = new Date(nextEventDate - currentDate);
 */
   var currentDate = new Date();
-  var nextEventDate = new Date('July 27 2016 18:30:00 GMT+0100 (CEST)');
-  var dateDifference = new Date(nextEventDate - currentDate);
+  var nextEventDate = new Date('August 03 2016 18:30:00 GMT+0100 (CEST)');
+  var dateDifference = new Date(currentDate);
 
   getCountdownTimeString(dateDifference);
 }
