@@ -8,7 +8,7 @@ WTMMeetup.prototype.loadAllEvents = function (callback) {
   this.callback = callback;
   // Use JSONP request to escape the CORS
   this.script = document.createElement('script');
-  this.script.src = '//api.meetup.com/womentechmakershamburg/events?callback=wtmMeetup.setEvents';
+  this.script.src = 'https://api.meetup.com/womentechmakershamburg/events?callback=wtmMeetup.setEvents';
   document.querySelector('head').appendChild(this.script);
 };
 
