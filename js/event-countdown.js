@@ -6,7 +6,6 @@
 // The two HTML DOM nodes for the countdown text and the countdown time
 /* let countdown; */
 /* let eventName; */
-
 var countdown;
 var eventName;
 
