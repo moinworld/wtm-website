@@ -2,11 +2,11 @@
 
 // Let's define our variables first:
 
-// A global variable, for accesing the interval
-/* let countdown; */
-var countdown;
-
+// A global variable, for accessing the interval
 // The two HTML DOM nodes for the countdown text and the countdown time
+/* let countdown; */
+
+var countdown;
 /*
 const $countdownText = document.querySelector('.countdown__text');
 const $countdownTime = document.querySelector('.countdown__time');
@@ -20,7 +20,13 @@ var $countdownTime = document.querySelector('.countdown__time');
  * Initialize the countdown, which should be updated in a one second interval
  */
 function initializeCountdown() {
-  countdown = setInterval(renderCountdown, 1000);
+  wtmMeetup.loadAllEvents(function(e) {
+    if (wtmMeetup.getNextEvent()) {
+      countdown = setInterval(renderCountdown, 1000, new Date(wtmMeetup.getNextEvent().time));
+    } else {
+      setCountdownInfo('No Events available', '');
+    }
+  });
 }
 
 /**
@@ -28,16 +34,14 @@ function initializeCountdown() {
  * calculate the date difference and pass this difference
  * for creating the text strings for the HTML.
  */
-function renderCountdown() {
+function renderCountdown(nextEventDate) {
 /*
   const currentDate = new Date();
   const nextEventDate = new Date('June 01 2016 19:00:00 GMT+0100 (CEST)');
   const dateDifference = new Date(nextEventDate - currentDate);
 */
   var currentDate = new Date();
-  var nextEventDate = new Date('August 14 2016 18:30:00 GMT+0100 (CEST)');
-  var dateDifference = new Date(currentDate);
-
+  var dateDifference = new Date(nextEventDate - currentDate);
   getCountdownTimeString(dateDifference);
 }
 
@@ -56,7 +60,7 @@ function getCountdownTimeString(date) {
 
   let countdownText, countdownTime;
 */
-  var days = date.getDate();
+  var days = date.getUTCDate(); // We need to get the current UTC time (Universal Time Coordinate or GMT - Greenwich Mean Time)
   var hours = date.getHours();
   var minutes = date.getMinutes();
   var seconds = date.getSeconds();
@@ -79,6 +83,15 @@ function getCountdownTimeString(date) {
     clearInterval(countdown);
   }
 
+  setCountdownInfo(countdownText, countdownTime);
+}
+
+/**
+ * sets the text in the page with the next Date information
+ * @param countdoenText
+ * @param countdownTime
+ */
+function setCountdownInfo(countdownText, countdownTime) {
   // Finally write the respective text strings to the HTML
   $countdownText.textContent = countdownText;
   $countdownTime.textContent = countdownTime;
