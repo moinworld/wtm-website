@@ -60,25 +60,7 @@ function getCountdownTimeString(date) {
 
   let countdownText, countdownTime;
 */
- /*    
-    The parameter date is a day in the year 1970. This is because all date calculations in computer systems are done using so-called timestamps. 
-    A timestamp is the number of milliseconds passed since 1/1/1970 00:00:000 (don't ask us why it's this date ;) )
-    So when we calculate the difference between two dates - as we did in the function renderCountdown() above 
-    - we are actually left with a timestamp.
-    Example:
-        Date 1: 20/8/2016 17:45:30 GMT
-        Date 2: 22/8/2016 18:00:00 GMT
-        Date 1 as timestamp: 1471715130
-        Date 2 as timestanp: 1471888800
-        
-        Difference Date 2 - Date 1 in timestamp:  1471888800 - 1471715130 = 173670    
-        
-        The resulting timestamp 173670 in Date format is 3/1/1970 00:14:30 GMT.
-        This value is saved inside our date variable. 
-        When we call date.getDate() as below, we will get the date of the month, so 3.
-        Since we are counting dates from 1 instead of 0, we have to substract 1 from that number to get the difference between Date 1 and Date 2.
-*/
-  var days = date.getDate() - 1;
+  var days = date.getUTCDate(); // We need to get the current UTC time (Universal Time Coordinate or GMT - Greenwich Mean Time)
   var hours = date.getHours();
   var minutes = date.getMinutes();
   var seconds = date.getSeconds();
