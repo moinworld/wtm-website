@@ -4,7 +4,6 @@
       cookieBlock = document.querySelector('#cookieInfo'),
       cookieConfirmBtn = document.querySelector('#cookieInfoBtn');
 
-
   if (!cookieConfirmed && typeof cookieBlock === 'object') {
     openOverlay(cookieBlock);
   }
@@ -29,7 +28,6 @@
     }
     return "";
   }
-
 
   function openOverlay(contentBlock) {
     var overlayWrapper = document.querySelector('#overlayWrapper');
