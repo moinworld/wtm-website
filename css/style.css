@@ -458,15 +458,12 @@ p:not(:last-child) {
     padding-bottom: 30px;
 }
 
-.countdown__text {
-    color: #4285F4; /* Dark Blue */
-    display: inline-block;
-    font-weight: 500;
-    line-height: 1.5;
+.countdown {
+    margin-bottom: 30px;
 }
 
-.countdown__time {
-    display: inline-block;
+.countdown__text {
+    color: #4285F4; /* Dark Blue */
 }
 
 .signup-btn {
