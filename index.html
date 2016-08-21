@@ -32,23 +32,20 @@
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KN53WC');</script>
     <!-- End Google Tag Manager -->
 
-    <!-- Overlay Wrapper Starts -->
-    <div id="overlayWrapper" class="overlay-wrapper">
-        <div id="cookieInfo" class="cookie-info">
-            <h3 class="h3">Cookies</h3>
-            <p>
-                Durch die Nutzung von moinworld.de stimmen Sie unserer Verwendung von Cookies zu. Nähere Informationen
-                über die von uns verwendeten Cookies und die Möglichkeiten, diese zu deaktivieren, finden Sie
-                <a href="imprint.html#googleAnalytics" class="cookie-info__link">hier</a>.
-            </p>
-            <button id="cookieInfoBtn" class="btn--action cookie-info__btn" type="button">Einverstanden</button>
-        </div>
-        <div class="overlay"></div>
-    </div>
-    <!-- Overlay Wrapper Ends -->
-
     <header class="header">
-    	<div class="wrapper">
+        <!-- Overlay Wrapper Starts -->
+        <div id="cookie">
+            <div id="cookie__info" class="cookie-info">
+                <h3 class="h3">Cookies</h3>
+                <p>
+                    Durch die Nutzung von moinworld.de stimmen Sie unserer Verwendung von Cookies zu. N&auml;here Informationen &uuml;ber die von uns verwendeten Cookies und die M&ouml;glichkeiten, diese zu deaktivieren, finden Sie <a href="imprint.html#googleAnalytics" class="cookie-info__link">hier</a>.
+                </p>
+                <button id="cookie__btn" class="btn--action cookie-info__btn" type="button">Einverstanden</button>
+            </div>
+        </div>
+        <!-- Overlay Wrapper Ends -->
+
+    	<div class="wrapper header__wrapper">
             <!-- Logo -->
             <h1 class="logo"><a href="/">Women Techmakers Hamburg</a></h1>
 
@@ -93,8 +90,10 @@
 
                     <!-- JS Counter Starts -->
                     <div class="countdown">
-                        <p class="countdown__text"></p>
-                        <p class="countdown__time"></p>
+                        <p>
+                            <strong class="countdown__text"></strong> <span class="countdown__name"></span><br>
+                            <span class="countdown__time"></span>
+                        </p>
                     </div>
                     <!-- JS Counter Ends -->
 
@@ -125,16 +124,14 @@
     <!-- Font Awesome -->
     <script src="https://use.fontawesome.com/5ac618c67d.js"></script>
 
-    <!-- Include our scroll-to-top JS file -->
+    <!-- Include our scroll-to-top - JS file -->
     <script src="js/scroll-to-top.js"></script>
 
-    <!-- Include our functions JS file -->
+    <!-- Include our events counter via Meetup API - JS file -->
     <script src="js/event-countdown.js"></script>
 
-    <!-- Cookie info / notification -- JS file -->
+    <!-- Inlcude our cookie info/notification - JS file -->
     <script src="js/cookie.js"></script>
-
-
 </body>
 
 </html>

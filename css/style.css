@@ -254,9 +254,12 @@ p:not(:last-child) {
 .header {
     width: 100%;
     height: 60px;
-    background-color: rgba(255,255,255, 0.9); /* White with 90% alpha opacity */
     position: fixed;
     z-index: 120;
+}
+
+.header__wrapper {
+    background-color: rgba(255,255,255, 0.9); /* White with 90% alpha opacity */
 }
 
 /* LOGO */
@@ -340,10 +343,11 @@ p:not(:last-child) {
     border: 0;
     color: white;
     font-size: 30px;
-    position: absolute;
     text-align: center;
-    right: -80px; /* 40px; */
+    position: absolute;
+    right: -80px;
     top: 0;
+    z-index: 110;
 }
 
 /* MOBILE NAVIGATION BUTTON & NAVIGATION LINKS */
@@ -370,7 +374,7 @@ p:not(:last-child) {
         background-color: #fff; /* White */
         overflow: auto;
         position: fixed;
-        z-index: 100;
+        z-index: 110;
         top: 0;
         left: -100%;
         visibility: visible;
@@ -455,15 +459,12 @@ p:not(:last-child) {
     padding-bottom: 30px;
 }
 
-.countdown__text {
-    color: #4285F4; /* Dark Blue */
-    display: inline-block;
-    font-weight: 500;
-    line-height: 1.5;
+.countdown {
+    margin-bottom: 30px;
 }
 
-.countdown__time {
-    display: inline-block;
+.countdown__text {
+    color: #4285F4; /* Dark Blue */
 }
 
 .signup-btn {
@@ -656,30 +657,14 @@ p:not(:last-child) {
     COOKIE OVERLAY & INFO STYLES
     ============================================================================= */
 
-.overlay,
-.overlay-wrapper {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-}
-
-.overlay {
-    background-color: rgba(102, 102, 102, 0.3); /* Gray */
-}
-
-.overlay-wrapper {
-    display: none;
-    z-index: 1000;
-}
-
 .cookie-info {
     width: 100%;
     background-color: #4285F4; /* Dark Blue */
     color: #fff;
     display: none;
     padding: 25px 10%;
-    position: fixed;
-    z-index: 30;
+    position: relative;
+    z-index: 100;
 }
 
 .cookie-info .h3 {
@@ -689,7 +674,7 @@ p:not(:last-child) {
 .cookie-info__link,
 .cookie-info__link:hover,
 .cookie-info__link:active,
-.cookie-info__link:focus
+.cookie-info__link:focus,
 .cookie-info__link:visited {
     color: #fff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -698,4 +683,13 @@ p:not(:last-child) {
 .cookie-info__btn {
     background-color: #fff;
     color: #4285F4; /* Dark Blue */
+}
+
+
+/*  =============================================================================
+    JS HELPER CLASSES
+    ============================================================================= */
+
+.is-relative {
+    position: relative;
 }

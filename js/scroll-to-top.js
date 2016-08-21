@@ -10,7 +10,7 @@ var intervalId = 0;
 /**
  * The HTML DOM node for the scroll to top link.
  * We select the element by its class name using the document.querySelector() function.
- * The variable representing our scroll link element is declared as a constant, so it 
+ * The variable representing our scroll link element is declared as a constant, so it
  * can't be overwritten.
  **/
 /* const $scrollLink = document.querySelector('.scroll'); */
@@ -19,20 +19,20 @@ var $scrollLink = document.querySelector('.scroll');
 // Let's start building our functions:
 
 /**
- * This definition of a function is our main entry point. 
+ * This definition of a function is our main entry point.
  * We will call the function at the end of the file.
  **/
 function initScrollToTop() {
-    
+
     /**
      * Add an event listener to the element representing our browser window.
-     * The event listener will trigger the function toggleScrollLinkOpaque() 
+     * The event listener will trigger the function toggleScrollLinkOpaque()
      * on scrolling up or down inside the window.
      **/
     window.addEventListener('scroll', toggleScrollLinkOpaque);
-    
+
     /**
-     * Add a click event listener to the scroll link element. 
+     * Add a click event listener to the scroll link element.
      * It will trigger the scrollToTop() function when the link is clicked.
      **/
 /*     $scrollLink.addEventListener('click', (evt) => { */
@@ -49,18 +49,18 @@ function scrollStep() {
     // This constant defines how many pixels we are going to scroll up in one step.
 //     const scrollHeight = 50;
     var scrollHeight = 50;
-    
+
     // Check whether the window has scrolled to the top
     if (window.scrollY === 0) {
         // End the animation by clearing the timer interval
         clearInterval(intervalId);
     }
-    
+
     // Call the function window.scroll(x, y)
     window.scroll(0, window.scrollY - scrollHeight);
 }
 
-/** 
+/**
  * Function to scroll to the top of the window.
  **/
 function scrollToTop() {
@@ -74,7 +74,7 @@ function scrollToTop() {
     var intervalDuration = 16.66666;
 
     /**
-     * setInterval(functionName, interval) calls a specified function 
+     * setInterval(functionName, interval) calls a specified function
      * after a given interval (in milliseconds). In our case, setInterval calls
      * the function scrollStep() every 16.666 ms.
      **/

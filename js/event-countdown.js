@@ -1,26 +1,70 @@
-/** Counter implementation in vanilla JavaScript (ES6 - ECMAScript 6) **/
+/** Meetup API integration in vanilla JavaScript **/
+
+function WTMMeetup() {
+    this.events;
+    this.callback;
+    this.script;
+}
+
+WTMMeetup.prototype.loadAllEvents = function (callback) {
+    this.callback = callback;
+    
+    // Use JSONP request to escape the CORS
+    this.script = document.createElement('script');
+    this.script.src = 'https://api.meetup.com/womentechmakershamburg/events?callback=wtmMeetup.setEvents';
+    
+    document.querySelector('head').appendChild(this.script);
+};
+
+WTMMeetup.prototype.setEvents = function (response) {
+    this.events = response.data;
+    this.script.parentNode.removeChild(this.script);
+    this.callback();
+};
+
+WTMMeetup.prototype.getNextEvent = function () {
+    return this.events ? this.events[0] : null;
+};
+
+var wtmMeetup = new WTMMeetup();
+
+
+
+/** Counter implementation in vanilla JavaScript & ES6 - ECMAScript 6 **/
 
 // Let's define our variables first:
-
-// A global variable, for accesing the interval
-/* let countdown; */
-var countdown;
-
+// A global variable, for accessing the interval
 // The two HTML DOM nodes for the countdown text and the countdown time
+/* let countdown; */
+/* let eventName; */
+var countdown;
+var eventName;
+
 /*
 const $countdownText = document.querySelector('.countdown__text');
+const $countdownName = document.querySelector('.countdown__name');
 const $countdownTime = document.querySelector('.countdown__time');
 */
 var $countdownText = document.querySelector('.countdown__text');
+var $countdownName = document.querySelector('.countdown__name');
 var $countdownTime = document.querySelector('.countdown__time');
 
 // Let's start building our functions:
-
 /**
  * Initialize the countdown, which should be updated in a one second interval
  */
 function initializeCountdown() {
-  countdown = setInterval(renderCountdown, 1000);
+  wtmMeetup.loadAllEvents(function(e) {
+    if (wtmMeetup.getNextEvent()) {
+        // Get the next event's name
+        eventName = wtmMeetup.getNextEvent().name;
+        
+        // Get the next event's date(timestamp)
+        countdown = setInterval(renderCountdown, 1000, new Date(wtmMeetup.getNextEvent().time));
+    } else {
+      setCountdownInfo('No Events available', '');
+    }
+  });
 }
 
 /**
@@ -28,16 +72,14 @@ function initializeCountdown() {
  * calculate the date difference and pass this difference
  * for creating the text strings for the HTML.
  */
-function renderCountdown() {
+function renderCountdown(nextEventDate) {
 /*
   const currentDate = new Date();
   const nextEventDate = new Date('June 01 2016 19:00:00 GMT+0100 (CEST)');
   const dateDifference = new Date(nextEventDate - currentDate);
 */
   var currentDate = new Date();
-  var nextEventDate = new Date('August 03 2016 18:30:00 GMT+0100 (CEST)');
-  var dateDifference = new Date(currentDate);
-
+  var dateDifference = new Date(nextEventDate - currentDate);
   getCountdownTimeString(dateDifference);
 }
 
@@ -54,34 +96,47 @@ function getCountdownTimeString(date) {
   let minutes = date.getMinutes();
   let seconds = date.getSeconds();
 
-  let countdownText, countdownTime;
+  let countdownText, countdownName, countdownTime;
 */
-  var days = date.getDate();
+  var days = date.getUTCDate(); // We need to get the current UTC time (Universal Time Coordinate or GMT - Greenwich Mean Time)
   var hours = date.getHours();
   var minutes = date.getMinutes();
   var seconds = date.getSeconds();
 
-  var countdownText, countdownTime;
-  
+  var countdownText, countdownName, countdownTime;
+
   if (date.getTime() >= 0) {
     days = days < 2 ? `${days} day, ` : `${days} days, `;
     hours = hours < 2 ? `${hours} hour and ` : `${hours} hrs, `;
-    minutes = minutes < 2 ? `${minutes} minute and` : `${minutes} min and `;
+    minutes = minutes < 2 ? `${minutes} minute and ` : `${minutes} min and `;
     seconds = seconds < 2 ? `${seconds} second` : `${seconds} sec`;
-    countdownText = `Next Meeting:`;
+    countdownText = `Next Event:`;
+    countdownName = eventName;
     countdownTime = `${days}${hours}${minutes}${seconds}`;
   } else if (date.getTime() >= -10800000 && date.getTime() < 0) {
-    countdownText = `This event is happening`;
-    countdownTime = `right now!`
+    countdownText = `The event`;
+    countdownName = eventName;
+    countdownTime = `is happening right now!`
   } else {
-    countdownText = `This event is`;
-    countdownTime = `already over.`;
+    countdownText = `The event`;
+    countdownName = eventName;
+    countdownTime = `is already over.`;
     clearInterval(countdown);
   }
 
+  setCountdownInfo(countdownText, countdownName, countdownTime);
+}
+
+/**
+ * sets the text in the page with the next Date information
+ * @param countdoenText
+ * @param countdownTime
+ */
+function setCountdownInfo(countdownText, countdownName, countdownTime) {
   // Finally write the respective text strings to the HTML
-  $countdownText.textContent = countdownText;
-  $countdownTime.textContent = countdownTime;
+    $countdownText.textContent = countdownText;
+    $countdownName.textContent = countdownName;
+    $countdownTime.textContent = countdownTime;
 }
 
 // As soon as the scripts is fully loaded by the browser,
