@@ -1,9 +1,5 @@
 # Women Techmakers Hamburg Website 
-<<<<<<< HEAD
-Last update: Aug 01, 2016.
-=======
 Last update: Aug 20, 2016.
->>>>>>> develop
 
 ##Questions?
 
