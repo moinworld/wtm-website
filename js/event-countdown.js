@@ -1,7 +1,38 @@
-/** Counter implementation in vanilla JavaScript (ES6 - ECMAScript 6) **/
+/** Meetup API integration in vanilla JavaScript **/
+
+function WTMMeetup() {
+    this.events;
+    this.callback;
+    this.script;
+}
+
+WTMMeetup.prototype.loadAllEvents = function (callback) {
+    this.callback = callback;
+    
+    // Use JSONP request to escape the CORS
+    this.script = document.createElement('script');
+    this.script.src = 'https://api.meetup.com/womentechmakershamburg/events?callback=wtmMeetup.setEvents';
+    
+    document.querySelector('head').appendChild(this.script);
+};
+
+WTMMeetup.prototype.setEvents = function (response) {
+    this.events = response.data;
+    this.script.parentNode.removeChild(this.script);
+    this.callback();
+};
+
+WTMMeetup.prototype.getNextEvent = function () {
+    return this.events ? this.events[0] : null;
+};
+
+var wtmMeetup = new WTMMeetup();
+
+
+
+/** Counter implementation in vanilla JavaScript & ES6 - ECMAScript 6 **/
 
 // Let's define our variables first:
-
 // A global variable, for accessing the interval
 // The two HTML DOM nodes for the countdown text and the countdown time
 /* let countdown; */
@@ -19,7 +50,6 @@ var $countdownName = document.querySelector('.countdown__name');
 var $countdownTime = document.querySelector('.countdown__time');
 
 // Let's start building our functions:
-
 /**
  * Initialize the countdown, which should be updated in a one second interval
  */

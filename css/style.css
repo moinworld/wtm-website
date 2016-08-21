@@ -343,10 +343,11 @@ p:not(:last-child) {
     border: 0;
     color: white;
     font-size: 30px;
-    position: absolute;
     text-align: center;
-    right: -80px; /* 40px; */
+    position: absolute;
+    right: -80px;
     top: 0;
+    z-index: 110;
 }
 
 /* MOBILE NAVIGATION BUTTON & NAVIGATION LINKS */
@@ -373,7 +374,7 @@ p:not(:last-child) {
         background-color: #fff; /* White */
         overflow: auto;
         position: fixed;
-        z-index: 100;
+        z-index: 110;
         top: 0;
         left: -100%;
         visibility: visible;
@@ -663,7 +664,7 @@ p:not(:last-child) {
     display: none;
     padding: 25px 10%;
     position: relative;
-    z-index: 900;
+    z-index: 100;
 }
 
 .cookie-info .h3 {
@@ -673,7 +674,7 @@ p:not(:last-child) {
 .cookie-info__link,
 .cookie-info__link:hover,
 .cookie-info__link:active,
-.cookie-info__link:focus
+.cookie-info__link:focus,
 .cookie-info__link:visited {
     color: #fff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -682,4 +683,13 @@ p:not(:last-child) {
 .cookie-info__btn {
     background-color: #fff;
     color: #4285F4; /* Dark Blue */
+}
+
+
+/*  =============================================================================
+    JS HELPER CLASSES
+    ============================================================================= */
+
+.is-relative {
+    position: relative;
 }
