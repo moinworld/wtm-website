@@ -1,5 +1,5 @@
 # Women Techmakers Hamburg Website 
-Last update: Aug 20, 2016.
+Last update: Sept 11, 2016.
 
 ##Questions?
 
@@ -11,6 +11,9 @@ https://github.com/stefaniestoppel
 
 **Philipp**:
 https://github.com/TheAmazingPT
+
+**Mary**:
+https://github.com/marymar
 
 ##Framework
 

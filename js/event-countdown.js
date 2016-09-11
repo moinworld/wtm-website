@@ -8,11 +8,11 @@ function WTMMeetup() {
 
 WTMMeetup.prototype.loadAllEvents = function (callback) {
     this.callback = callback;
-    
+
     // Use JSONP request to escape the CORS
     this.script = document.createElement('script');
     this.script.src = 'https://api.meetup.com/womentechmakershamburg/events?callback=wtmMeetup.setEvents';
-    
+
     document.querySelector('head').appendChild(this.script);
 };
 
@@ -58,7 +58,7 @@ function initializeCountdown() {
     if (wtmMeetup.getNextEvent()) {
         // Get the next event's name
         eventName = wtmMeetup.getNextEvent().name;
-        
+
         // Get the next event's date(timestamp)
         countdown = setInterval(renderCountdown, 1000, new Date(wtmMeetup.getNextEvent().time));
     } else {
@@ -76,7 +76,7 @@ function renderCountdown(nextEventDate) {
   getCountdownTimeString(getTimeRemaining(nextEventDate));
 }
 
-//reference: https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/
+// Reference: https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/
 function getTimeRemaining(endtime){
   var t = Date.parse(endtime) - Date.parse(new Date());
   var seconds = Math.floor( (t/1000) % 60 );
@@ -123,11 +123,11 @@ function getCountdownTimeString(countdownData) {
     countdownName = eventName;
     countdownTime = `${days}${hours}${minutes}${seconds}`;
   } else if (countdownData.total >= -10800000 && countdownData.total < 0) {
-    countdownText = `The event`;
+    countdownText = `The Event:`;
     countdownName = eventName;
     countdownTime = `is happening right now!`
   } else {
-    countdownText = `The event`;
+    countdownText = `The Event:`;
     countdownName = eventName;
     countdownTime = `is already over.`;
     clearInterval(countdown);
