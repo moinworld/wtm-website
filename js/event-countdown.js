@@ -73,14 +73,23 @@ function initializeCountdown() {
  * for creating the text strings for the HTML.
  */
 function renderCountdown(nextEventDate) {
-/*
-  const currentDate = new Date();
-  const nextEventDate = new Date('June 01 2016 19:00:00 GMT+0100 (CEST)');
-  const dateDifference = new Date(nextEventDate - currentDate);
-*/
-  var currentDate = new Date();
-  var dateDifference = new Date(nextEventDate - currentDate);
-  getCountdownTimeString(dateDifference);
+  getCountdownTimeString(getTimeRemaining(nextEventDate));
+}
+
+//reference: https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/
+function getTimeRemaining(endtime){
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor( (t/1000) % 60 );
+  var minutes = Math.floor( (t/1000/60) % 60 );
+  var hours = Math.floor( (t/(1000*60*60)) % 24 );
+  var days = Math.floor( t/(1000*60*60*24) );
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
 }
 
 /**
@@ -89,7 +98,7 @@ function renderCountdown(nextEventDate) {
  *    The date difference between the current date
  *    and the date of the upcoming event
  */
-function getCountdownTimeString(date) {
+function getCountdownTimeString(countdownData) {
 /*
   let days = date.getDate();
   let hours = date.getHours();
@@ -98,14 +107,14 @@ function getCountdownTimeString(date) {
 
   let countdownText, countdownName, countdownTime;
 */
-  var days = date.getUTCDate(); // We need to get the current UTC time (Universal Time Coordinate or GMT - Greenwich Mean Time)
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var seconds = date.getSeconds();
+  var days = countdownData.days;
+  var hours = countdownData.hours;
+  var minutes = countdownData.minutes;
+  var seconds = countdownData.seconds;
 
   var countdownText, countdownName, countdownTime;
 
-  if (date.getTime() >= 0) {
+  if (countdownData.total >= 0) {
     days = days < 2 ? `${days} day, ` : `${days} days, `;
     hours = hours < 2 ? `${hours} hour and ` : `${hours} hrs, `;
     minutes = minutes < 2 ? `${minutes} minute and ` : `${minutes} min and `;
@@ -113,7 +122,7 @@ function getCountdownTimeString(date) {
     countdownText = `Next Event:`;
     countdownName = eventName;
     countdownTime = `${days}${hours}${minutes}${seconds}`;
-  } else if (date.getTime() >= -10800000 && date.getTime() < 0) {
+  } else if (countdownData.total >= -10800000 && countdownData.total < 0) {
     countdownText = `The event`;
     countdownName = eventName;
     countdownTime = `is happening right now!`
