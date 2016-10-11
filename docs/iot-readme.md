@@ -8,7 +8,7 @@ sensor data to Firebase, and trigger actuators from Firebase.
 1. Install [Arduino 1.6.12](https://www.arduino.cc/en/Main/Software)
 1. Install Arduino ESP8266 core :
 	- Start Arduino and open File -> Preferences window
-	- Enter 'http://arduino.esp8266.com/stable/package_esp8266com_index.json' into Additional Board Manager URLs field
+	- Enter `http://arduino.esp8266.com/stable/package_esp8266com_index.json` into Additional Board Manager URLs field
 	- Open Boards Manager from Tools > Board menu and install esp8266 platform 
 1. Install [Silicon Labs VCP driver](https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx) (for MacOSX and Windows)
 1. Download [FirebaseArduino library](https://github.com/googlesamples/firebase-arduino/archive/master.zip)
@@ -38,14 +38,12 @@ sensor data to Firebase, and trigger actuators from Firebase.
 1. Go to Project Settings
 1. Copy the `Project-ID`
 1. Replace (in the Arduino file) at `FIREBASE_HOST` the word `example` with the Project-ID
-
-(ex: '#define FIREBASE_HOST "wtm-iotworkshop.firebaseio.com"')
+	- ex: '#define FIREBASE_HOST "wtm-iotworkshop.firebaseio.com"'
 1. In Firebase,still in the settings, go to `Database`
 1. Click `Show` on the database secret
 1. Copy the `Secret`
-1. Replace `FIREBASE_AUTH` "token_or_secret" with your 'Secret'
-
-(ex. #define FIREBASE_AUTH "fCDTy92kAvgFPIi0rt2uVjPv9ysTH4pNg3IM7S")
+1. Replace `FIREBASE_AUTH` "token_or_secret" with your 'Secret' 
+	- ex. #define FIREBASE_AUTH "fCDTy92kAvgFPIi0rt2uVjPv9ysTH4pNg3IM7S"
 1. Select the board `Tools > Board > NodeMCU 1.0`
 1. Select the serial port  `Tools > Port > USBtoUART or COM3`
 1. Select the upload speed `Tools > Upload Speed > 115200`
