@@ -19,11 +19,11 @@ sensor data to Firebase, and trigger actuators from Firebase.
 
 1. Get a [Wio Link](http://www.seeedstudio.com/depot/Wio-Link-p-2604.html) board
 1. Connect:
-  - a [Grove - Vibration Motor](http://www.seeedstudio.com/wiki/Grove_-_Vibration_Motor) on `I2C`
-  - a [Grove - Light Sensor](http://www.seeedstudio.com/wiki/Grove_-_Light_Sensor) on `Analog`
-  - a [Grove - Red LED](http://www.seeedstudio.com/wiki/Grove_-_Red_LED) on `Digital1`
-  - a [Grove - Button](http://www.seeedstudio.com/wiki/Grove_-_Button) on `Digital0`
-  - a [Grove - Mini Fan](http://www.seeedstudio.com/wiki/Grove_-_Mini_Fan) on `Digital2`
+  * a [Grove - Vibration Motor](http://www.seeedstudio.com/wiki/Grove_-_Vibration_Motor) on `I2C`
+  * a [Grove - Light Sensor](http://www.seeedstudio.com/wiki/Grove_-_Light_Sensor) on `Analog`
+  * a [Grove - Red LED](http://www.seeedstudio.com/wiki/Grove_-_Red_LED) on `Digital1`
+  * a [Grove - Button](http://www.seeedstudio.com/wiki/Grove_-_Button) on `Digital0`
+  * a [Grove - Mini Fan](http://www.seeedstudio.com/wiki/Grove_-_Mini_Fan) on `Digital2`
 
 1. Connect the board to you PC with the USB cable (it needs to stay connected to have power all the time)
 
@@ -55,14 +55,13 @@ sensor data to Firebase, and trigger actuators from Firebase.
 1. If everything went well, you should see here now 5 entries in the database (if not, you can press the reset button on the board or/and re-check your settings)
 1. Set `cooldown` to `1` then `0`
 1. Watch the Ventilation turn on and off in the room
-1. Same for `redlight` * and `brrr`
+1. Same for `redlight` and `brrr`
+	* If the red LED is not turning on, try this two fixes:
+		- change the direction of the LED (switch the legs on + and -)
+		- turn the potentiometer (that orange thing with the plus) completely to one side (you might need a screwdriver)
 1. Press the push button in the room
 1. Watch the `pushbutton` value change in the Firebase console
 1. Put one hand on the light sensor
 1. Watch the `sunlight` value change in the Firebase console
-
-* If the red LED is not turning on, try this two fixes:
- - change the direction of the LED (switch the legs on + and -)
- - turn the potentiometer (that orange thing with the plus) completely to one side (you might need a screwdriver)
 
 1. Go ahead and distribute the components in your Lego Smart House and add some logic to it (eg. If someone presses the button, the ventilation turns on) 
