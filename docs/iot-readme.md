@@ -8,7 +8,7 @@ sensor data to Firebase, and trigger actuators from Firebase.
 1. Install [Arduino 1.6.12](https://www.arduino.cc/en/Main/Software)
 1. Install Arduino ESP8266 core :
 	- Start Arduino and open File -> Preferences window
-	- Enter "http://arduino.esp8266.com/stable/package_esp8266com_index.json" into Additional Board Manager URLs field
+	- Enter 'http://arduino.esp8266.com/stable/package_esp8266com_index.json' into Additional Board Manager URLs field
 	- Open Boards Manager from Tools > Board menu and install esp8266 platform 
 1. Install [Silicon Labs VCP driver](https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx) (for MacOSX and Windows)
 1. Download [FirebaseArduino library](https://github.com/googlesamples/firebase-arduino/archive/master.zip)
