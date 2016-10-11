@@ -33,7 +33,7 @@ sensor data to Firebase, and trigger actuators from Firebase.
 1. In Arduino: Open `File > Examples > FirebaseArduino > FirebaseRoom_ESP8266` 
 (you can close the other Window)
 1. In the file replace `WIFI_SSID` "SSID" with `WIFI_SSID` "Mindspace_kloepperhaus"
-1. Replace with the `WIFI_PASSWORD` 
+1. Replace the `WIFI_PASSWORD` 
 1. Go to https://firebase.google.com/ and create a new Project
 1. Go to Project Settings
 1. Copy the `Project-ID`
