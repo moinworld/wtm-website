@@ -38,11 +38,13 @@ sensor data to Firebase, and trigger actuators from Firebase.
 1. Go to Project Settings
 1. Copy the `Project-ID`
 1. Replace (in the Arduino file) at `FIREBASE_HOST` the word `example` with the Project-ID
+
 (ex: '#define FIREBASE_HOST "wtm-iotworkshop.firebaseio.com"')
 1. In Firebase,still in the settings, go to `Database`
 1. Click `Show` on the database secret
 1. Copy the `Secret`
 1. Replace `FIREBASE_AUTH` "token_or_secret" with your 'Secret'
+
 (ex. #define FIREBASE_AUTH "fCDTy92kAvgFPIi0rt2uVjPv9ysTH4pNg3IM7S")
 1. Select the board `Tools > Board > NodeMCU 1.0`
 1. Select the serial port  `Tools > Port > USBtoUART or COM3`
