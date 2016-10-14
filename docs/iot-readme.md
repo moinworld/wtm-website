@@ -29,12 +29,12 @@ sensor data to Firebase, and trigger actuators from Firebase.
 
 ## Configuration
 
-
-1. In Arduino: Open `File > Examples > FirebaseArduino > FirebaseRoom_ESP8266` 
+1. In Arduino: Select the board `Tools > Board > NodeMCU 1.0`
+1. Open `File > Examples > FirebaseArduino > FirebaseRoom_ESP8266` 
 (you can close the other Window)
 1. In the file replace `WIFI_SSID` "SSID" with `WIFI_SSID` "Mindspace_kloepperhaus"
 1. Replace the `WIFI_PASSWORD` 
-1. Go to https://firebase.google.com/ and create a new Project
+1. Go to https://firebase.google.com/ and create a new Project (You need to LogIn with your Google account, it's for free)
 1. Go to Project Settings
 1. Copy the `Project-ID`
 1. Replace (in the Arduino file) at `FIREBASE_HOST` the word `example` with the Project-ID
@@ -44,8 +44,7 @@ sensor data to Firebase, and trigger actuators from Firebase.
 1. Copy the `Secret`
 1. Replace `FIREBASE_AUTH` "token_or_secret" with your 'Secret' 
 	- ex. #define FIREBASE_AUTH "fCDTy92kAvgFPIi0rt2uVjPv9ysTH4pNg3IM7S"
-1. Select the board `Tools > Board > NodeMCU 1.0`
-1. Select the serial port  `Tools > Port > USBtoUART or COM3`
+1. Select the serial port  `Tools > Port > USBtoUART or COM3 or /dev/xxx`
 1. Select the upload speed `Tools > Upload Speed > 115200`
 1. Click `Sketch > Upload` or the arrow button
 
