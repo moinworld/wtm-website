@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Raum</title>
+  </head>
+  <body>
+  <h1 id="firebaseroom">FirebaseRaum</h1>
+<p>FirebaseRaum ist ein Beispiel, das die Grundfunktionen von Firebase Arduino zeigt, <br />
+also wie man Sensor Daten in der Firebase speichert und Aktoren von dort ansteuert.</p>
+<h2 id="software-setup">Software Setup</h2>
+<ol>
+<li>Installiere <a href="https://www.arduino.cc/en/Main/Software">Arduino 1.6.12</a></li>
+<li>Installiere den Arduino ESP8266 Kern :
+<ul>
+<li>Starte Arduino und öffne File -&gt; Preferences window </li>
+<li>Gib <code>http://arduino.esp8266.com/stable/package_esp8266com_index.json</code> in das Feld <code>Board Manager URLs </code> ein</li>
+<li>Öffne den <code>Boards Manager</code> in Tools &gt; Board menu und installiere die esp8266 platform</li>
+</ul></li>
+<li>Installiere <a href="https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx">Silicon Labs VCP driver</a> (nur wenn du MacOSX oder Windows benutzt)</li>
+<li>Lade die Datei <a href="https://github.com/googlesamples/firebase-arduino/archive/master.zip">FirebaseArduino library</a> herunter
+<ul>
+<li>In der Arduino Software gehe auf <code>Sketch &gt; Include Library &gt; Add .ZIP Library...</code></li>
+<li>Wähle die Datei aus, die du gerade herunter geladen hast: <code>firebase-arduino-master.zip</code></li>
+</ul></li>
+</ol>
+<h2 id="hardware-setup">Hardware Setup</h2>
+<ol>
+<li>Nimm einen <a href="http://www.seeedstudio.com/depot/Wio-Link-p-2604.html">Wio Link</a> Board</li>
+<li>Verbinde:</li>
+
+<ul>
+<li>den <a href="http://www.seeedstudio.com/wiki/Grove_-_Vibration_Motor">Grove - Vibration Motor</a> an <code>I2C</code></li>
+<li>den <a href="http://www.seeedstudio.com/wiki/Grove_-_Light_Sensor">Grove - Light Sensor</a> an <code>Analog</code></li>
+<li>den <a href="http://www.seeedstudio.com/wiki/Grove_-_Red_LED">Grove - Red LED</a> an <code>Digital1</code></li>
+<li>den <a href="http://www.seeedstudio.com/wiki/Grove_-_Button">Grove - Button</a> an <code>Digital0</code></li>
+<li>den <a href="http://www.seeedstudio.com/wiki/Grove_-_Mini_Fan">Grove - Mini Fan</a> an <code>Digital2</code></li>
+</ul>
+
+<li>Verbinde das Board mit dem USB Kabel mit deinem PC. (Es muss die ganze Zeit verbunden bleiben, damit es immer Strom hat)</li>
+</ol>
+<h2 id="configuration">Konfiguration</h2>
+<ol>
+<li>In Arduino, wähle das Board aus: <code>Tools &gt; Board &gt; NodeMCU 1.0</code></li>
+<li>Öffne <code>File &gt; Examples &gt; FirebaseArduino &gt; FirebaseRoom_ESP8266</code><br />
+(du kannst das andere Fenster schließen)</li>
+<li>In der Datei, ersetze <code>WIFI_SSID "SSID" </code> mit <code>WIFI_SSID "dein_wifi_netzwerk_name"</code></li>
+<li>Ersetze das <code>WIFI_PASSWORD</code></li>
+<li>Gehe mit einem Browser zu <a href="https://firebase.google.com/" class="uri">https://firebase.google.com/</a> und erstelle ein neues Projekt</li> (Du benötigst dazu eine Google Mail Adresse)
+<li>Gehe über das Zahnrädchen zu den Projekteinstellungen</li>
+<li>Kopiere die <code>Projekt-ID</code></li>
+<li>Ersetze (in der Arduino Datei) <code>FIREBASE_HOST</code> das Wort <code>example</code> mit der Projekt-ID<br />
+(zB: '#define FIREBASE_HOST "wtm-iotworkshop.firebaseio.com"')</li>
+<li>Auf Firebase,immernoch in den Einstellungen, klicke auf <code>Datenbank</code></li>
+<li>Klicke auf <code>Show</code> bei dem Datenbank-Secret</li>
+<li>Kopiere das <code>Secret</code></li>
+<li>Ersetze <code>FIREBASE_AUTH "token_or_secret" </code> mit deinem 'Secret'<br />
+(zB. <code>#define FIREBASE_AUTH "fCDTy92kAvgFPIi0rt2uVjPv9ysTH4pNg3IM7S"</code>)</li>
+<li>Wähle deinen seriellen Port über: <code>Tools &gt; Port &gt; USBtoUART or COM3</code></li>
+<li>Wähle die Upload Geschwindigkeit: <code>Tools &gt; Upload Speed &gt; 115200</code></li>
+<li>Klicke <code>Sketch &gt; Upload</code> oder den Knopf mit dem Pfeil</li>
+</ol>
+<h2 id="play">Spielen</h2>
+<ol>
+<li>Geh in deinen Firebase <code>Datenbank</code> Abschnitt (dort, wo die richtige Datenbank ist, nicht mehr die Einstellungen)</li>
+<li>Wenn alles gut geklappt hat, solltest du hier nun fünf Einträge in deiner Datenbank sehen (wenn nicht, kannst du den Reset-Knopf auf dem Board drücken oder nochmal deine Einstellungen ansehen, ob du alles genau wie in der Anleitung gemacht hast)</li>
+<li>Setze <code>cooldown</code> auf <code>1</code> und dann wieder auf <code>0</code></li>
+<li>Sieh zu, wie das Windrad im Raum an und aus geht</li>
+<li>Versuche dasselbe mit <code>redlight</code> und <code>brrr</code>
+<ul>
+<li>Wenn sich die rote LED nicht einschaltet, versuche diese beiden Lösungen:
+<ul>
+<li> vertausche die richtung der LED (vertausche die Beinchen, die auf + und - sind)</li>
+<li>Drehe das Potentiometer (das orange Ding mit dem plus) komplett in eine Richtung (du brauchst dafür vielleicht einen Schraubendreher)</li>
+</ul></li>
+</ul></li>
+<li>Drücke den Knopf im Raum</li>
+<li>Sieh, wie sich der <code>pushbutton</code> Wert in der Firebase Konsole ändert</li>
+<li>Lege eine Hand auf den Lichtsensor</li>
+<li>Sieh zu, wie sich der <code>sunlight</code> Wert in der Firebase Konsole ändert</li>
+<li><p>Mach weiter und verteile die Sensoren und Aktoren in deinem Lego Smarthouse und denke dir eine Logik dazu aus (zB. Wenn jemand den Knopf drückt, soll die Kühlung (Windrad) angehen)</p></li>
+</ol>
+  </body>
+</html>
+
+
