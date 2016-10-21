@@ -1,0 +1,76 @@
+
+<h1 id="firebaseroom">FirebaseRoom</h1>
+<p>FirebaseRoom is a sample that shows basic usage of FirebaseArduino to push<br />
+sensor data to Firebase, and trigger actuators from Firebase.</p>
+<h2 id="software-setup">Software setup</h2>
+<ol>
+<li>Install <a href="https://www.arduino.cc/en/Main/Software">Arduino 1.6.12</a></li>
+<li>Install Arduino ESP8266 core :
+<ul>
+<li>Start Arduino and open File -&gt; Preferences window</li>
+<li>Enter "<a href="http://arduino.esp8266.com/stable/package_esp8266com_index.json" class="uri">http://arduino.esp8266.com/stable/package_esp8266com_index.json</a>" into Additional Board Manager URLs field</li>
+<li>Open Boards Manager from Tools &gt; Board menu and install esp8266 platform</li>
+</ul></li>
+<li>Install <a href="https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx">Silicon Labs VCP driver</a> (for MacOSX and Windows)</li>
+<li>Download <a href="https://github.com/googlesamples/firebase-arduino/archive/master.zip">FirebaseArduino library</a>
+<ul>
+<li>In Arduino Software click <code>Sketch &gt; Include Library &gt; Add .ZIP Library...</code></li>
+<li>Choose the just downloaded file <code>firebase-arduino-master.zip</code></li>
+</ul></li>
+</ol>
+<h2 id="hardware-setup">Hardware setup</h2>
+<ol>
+<li>Get a <a href="http://www.seeedstudio.com/depot/Wio-Link-p-2604.html">Wio Link</a> board</li>
+<li>Connect:</li>
+
+<ul>
+<li>a <a href="http://www.seeedstudio.com/wiki/Grove_-_Vibration_Motor">Grove - Vibration Motor</a> on <code>I2C</code></li>
+<li>a <a href="http://www.seeedstudio.com/wiki/Grove_-_Light_Sensor">Grove - Light Sensor</a> on <code>Analog</code></li>
+<li>a <a href="http://www.seeedstudio.com/wiki/Grove_-_Red_LED">Grove - Red LED</a> on <code>Digital1</code></li>
+<li>a <a href="http://www.seeedstudio.com/wiki/Grove_-_Button">Grove - Button</a> on <code>Digital0</code></li>
+<li>a <a href="http://www.seeedstudio.com/wiki/Grove_-_Mini_Fan">Grove - Mini Fan</a> on <code>Digital2</code></li>
+</ul>
+
+<li>Connect the board to your computer with the USB cable (it needs to stay connected to have power all the time)</li>
+</ol>
+<h2 id="configuration">Configuration</h2>
+<ol>
+<li>Select the board <code>Tools &gt; Board &gt; NodeMCU 1.0</code></li>
+<li>In Arduino: Open <code>File &gt; Examples &gt; FirebaseArduino &gt; FirebaseRoom_ESP8266</code><br />
+(you can close the other Window)</li>
+<li>In the file replace <code>WIFI_SSID "SSID" </code> with <code>WIFI_SSID "your_wifi_network_name"</code></li>
+<li>Replace the <code>WIFI_PASSWORD</code></li>
+<li>Go to <a href="https://firebase.google.com/" class="uri">https://firebase.google.com/</a> and create a new Project</li>
+<li>Go to Project Settings</li>
+<li>Copy the <code>Project-ID</code></li>
+<li>Replace (in the Arduino file) at <code>FIREBASE_HOST</code> the word <code>example</code> with the Project-ID<br />
+(ex: '#define FIREBASE_HOST "wtm-iotworkshop.firebaseio.com"')</li>
+<li>In Firebase,still in the settings, go to <code>Database</code></li>
+<li>Click <code>Show</code> on the database secret</li>
+<li>Copy the <code>Secret</code></li>
+<li>Replace <code>FIREBASE_AUTH "token_or_secret" </code> with your 'Secret'<br />
+(ex. <code>#define FIREBASE_AUTH "fCDTy92kAvgFPIi0rt2uVjPv9ysTH4pNg3IM7S"</code>)</li>
+<li>Select the serial port <code>Tools &gt; Port &gt; USBtoUART or COM3</code></li>
+<li>Select the upload speed <code>Tools &gt; Upload Speed &gt; 115200</code></li>
+<li>Click <code>Sketch &gt; Upload</code> or the arrow button</li>
+</ol>
+<h2 id="play">Play</h2>
+<ol>
+<li>Go to your Firebase <code>Database</code> section (your actual database, not the settings sections)</li>
+<li>If everything went well, you should see here now 5 entries in the database (if not, you can press the reset button on the board or/and re-check your settings)</li>
+<li>Set <code>cooldown</code> to <code>1</code> then <code>0</code></li>
+<li>Watch the Ventilation turn on and off in the room</li>
+<li>Same for <code>redlight</code> and <code>brrr</code>
+<ul>
+<li>If the red LED is not turning on, try this two fixes:
+<ul>
+<li>change the direction of the LED (switch the legs on + and -)</li>
+<li>turn the potentiometer (that orange thing with the plus) completely to one side (you might need a screwdriver)</li>
+</ul></li>
+</ul></li>
+<li>Press the push button in the room</li>
+<li>Watch the <code>pushbutton</code> value change in the Firebase console</li>
+<li>Put one hand on the light sensor</li>
+<li>Watch the <code>sunlight</code> value change in the Firebase console</li>
+<li><p>Go ahead and distribute the components in your Lego Smart House and add some logic to it (eg. If someone presses the button, the ventilation turns on)</p></li>
+</ol>
