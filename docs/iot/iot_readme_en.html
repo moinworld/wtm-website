@@ -43,7 +43,7 @@ sensor data to Firebase, and trigger actuators from Firebase.</p>
 <li>Go to <a href="https://firebase.google.com/" class="uri">https://firebase.google.com/</a> and create a new Project</li>
 <li>Go to Project Settings</li>
 <li>Copy the <code>Project-ID</code></li>
-<li>Replace (in the Arduino file) at <code>FIREBASE_HOST</code> the word <code>example</code> with the Project-ID<br />
+<li>Replace (in the Arduino file) at <code>FIREBASE_HOST</code> the word <code>example</code> with the Project-ID. Please make sure that you only replaced "example" and not the rest of the URL that we need to connect to Firebase: ".firebaseio.com"<br />
 (ex: '#define FIREBASE_HOST "wtm-iotworkshop.firebaseio.com"')</li>
 <li>In Firebase,still in the settings, go to <code>Database</code></li>
 <li>Click <code>Show</code> on the database secret</li>
