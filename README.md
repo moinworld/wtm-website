@@ -24,3 +24,4 @@ We're using a small responsive framework to build this template.
 http://www.responsivegridsystem.com/
 
 **Author** Graham Miller: http://grahamrobertsonmiller.co.uk/ 
+
